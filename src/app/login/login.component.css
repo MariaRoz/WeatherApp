@@ -10,9 +10,3 @@
   display: flex;
   justify-content: center;
 }
-.google img {
-  width: 26px;
-}
-.google:hover {
-  color: #ff4081;
-}
