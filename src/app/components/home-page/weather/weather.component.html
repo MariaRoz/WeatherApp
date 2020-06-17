@@ -1,40 +1,16 @@
-<mat-table [dataSource]="weather" class="table">
-  <!-- Name Column -->
+<mat-table [dataSource]="weatherDate" class="table">
   <ng-container matColumnDef="date">
     <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
   </ng-container>
-
-  <!-- Weight Column -->
   <ng-container matColumnDef="min">
     <mat-header-cell *matHeaderCellDef> Min </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.mintempC}} C </mat-cell>
   </ng-container>
-
-  <!-- Symbol Column -->
   <ng-container matColumnDef="max">
     <mat-header-cell *matHeaderCellDef> Max </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.maxtempC}} C </mat-cell>
   </ng-container>
-
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
-
-
-<!--<p>3 day weather forecast:</p>-->
-<!--<table>-->
-<!--  <thead>-->
-<!--  <th>Date</th>-->
-<!--  <th>Max</th>-->
-<!--  <th>Min</th>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--  <tr *ngFor="let res of weather">-->
-<!--    <td> {{res.date}} </td>-->
-<!--    <td>{{res.maxtempC}} C</td>-->
-<!--    <td>{{res.mintempC}} C</td>-->
-<!--  </tr>-->
-<!--&lt;!&ndash;  <tr *ngFor="let res of weather"><td>{{res.mintempC}}</td></tr>&ndash;&gt;-->
-<!--  </tbody>-->
-<!--</table>-->

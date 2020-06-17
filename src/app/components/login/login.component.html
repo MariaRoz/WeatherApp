@@ -1,12 +1,4 @@
-<ng-template></ng-template>
-
 <div class="container">
-  <div *ngIf="isLoading" class="loading-spinner">
-    <mat-progress-spinner
-      mode="indeterminate"
-      mat-raised-button color="accent"
-    ></mat-progress-spinner>
-  </div>
   <mat-card class="form" *ngIf="!isLoading">
     <mat-card-header>
       <mat-card-title *ngIf="!isLoginMode">Registration</mat-card-title>
@@ -21,7 +13,10 @@
                  ngModel
                  name="email"
                  required
-                 email/>
+                 email
+                 minlength="6"
+                 maxlength="100"
+          />
         </mat-form-field>
         <mat-form-field class="form-group" appearance="outline">
           <mat-label>Password</mat-label>
@@ -30,7 +25,9 @@
                  ngModel
                  name="password"
                  required
-                 minlength="6"/>
+                 minlength="6"
+                 maxlength="100"
+          />
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions>

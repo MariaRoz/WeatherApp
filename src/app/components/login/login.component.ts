@@ -1,10 +1,7 @@
-import {
-  Component,
-  ViewChild,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-// import { PlaceholderDirective } from '../../../shared/placeholder/placeholder.directive';
+import { LoginService } from '../../services/login.service';
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login.component.html',
@@ -13,10 +10,8 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
-  // @ViewChild(PlaceholderDirective, { static: false })
-  // alertHost: PlaceholderDirective;
 
-  constructor() {}
+  constructor(private service: LoginService) {}
 
   ngOnInit() {
   }
@@ -32,8 +27,10 @@ export class LoginComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     if (this.isLoginMode) {
-     console.log('login');
+      this.service.loginUser(email, password);
+      console.log('login');
     } else {
+      this.service.registerUser(email, password);
       console.log('sign in');
     }
 

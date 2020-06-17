@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {GetDataService} from '../../services/get-data.service';
+import { GetDataService } from '../../../services/get-data.service';
+import { Weather } from '../../../models/weather.interface';
+import {Forecast} from '../../../models/forecast.interface';
 
 @Component({
   selector: 'app-weather',
@@ -7,13 +9,14 @@ import {GetDataService} from '../../services/get-data.service';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
-  weather = [];
+  weatherDate: Weather[] = [];
   displayedColumns: string[] = ['date', 'min', 'max'];
 
   constructor(private service: GetDataService) { }
 
   ngOnInit(): void {
-    this.service.getWeather().subscribe((res: any) => { this.weather = res.data.weather; console.log(this.weather);
+    this.service.getWeather().subscribe((forecast: Forecast) => {
+       this.weatherDate = forecast.data.weather;
     }
     );
   }

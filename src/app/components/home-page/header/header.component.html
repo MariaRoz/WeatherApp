@@ -1,9 +1,10 @@
 <mat-toolbar color="white" class="header">
-  <h1 class="logo">WeatherApp</h1>
+  <h1 class="logo" routerLink=''>WeatherApp</h1>
   <button
     *ngIf="!isAuthenticated"
     mat-flat-button
     color="accent"
+    routerLink="/login"
   >
     Log In
   </button>
