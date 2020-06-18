@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 export class LoginService {
   constructor(private http: HttpClient) {}
 
-  registerUser(username, password): Observable<any>  {
-    return this.http.post<any>('http://localhost:3000/auth/register', {username, password});
+  registerUser(login, password): Observable<string>  {
+   return this.http.post<any>('http://localhost:3000/auth/register', {login, password});
   }
 
-  loginUser(username, password): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/auth/login', {username, password});
+  loginUser(login, password): Observable<string> {
+    return this.http.post<any>('http://localhost:3000/auth/login', {login, password});
   }
 
 }

@@ -11,7 +11,7 @@ export class GetDataService {
   constructor(private http: HttpClient) {}
 
   getWeather(): Observable<object> {
-    const url = `http://api.worldweatheronline.com/premium/v1/weather.ashx?key=${API_KEY}&q=Kharkov&num_of_days=3&tp=3&format=json`;
+    const url = `http://api.worldweatheronline.com/premium/v1/weather.ashx?key=${API_KEY}&q=Kharkov,Ukraine&num_of_days=5&tp=3&format=json`;
     return this.http.get(url);
   }
 

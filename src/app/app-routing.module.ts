@@ -4,7 +4,8 @@ import { WeatherComponent } from './components/home-page/weather/weather.compone
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: WeatherComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'login'},
+  { path: 'weather', component: WeatherComponent },
   { path: 'login', component: LoginComponent }
 ];
 

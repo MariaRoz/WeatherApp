@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card class="form" *ngIf="!isLoading">
+  <mat-card class="form">
     <mat-card-header>
       <mat-card-title *ngIf="!isLoginMode">Registration</mat-card-title>
       <mat-card-title *ngIf="isLoginMode">Login</mat-card-title>
@@ -43,5 +43,6 @@
         </button>
       </mat-card-actions>
     </form>
+    <p *ngIf="error" class="message">{{error}}</p>
   </mat-card>
 </div>
