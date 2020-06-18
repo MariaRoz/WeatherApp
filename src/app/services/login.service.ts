@@ -10,11 +10,11 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   registerUser(login, password): Observable<string>  {
-   return this.http.post<any>('http://localhost:3000/auth/register', {login, password});
+   return this.http.post<string>('http://localhost:3000/auth/register', {login, password});
   }
 
   loginUser(login, password): Observable<string> {
-    return this.http.post<any>('http://localhost:3000/auth/login', {login, password});
+    return this.http.post<string>('http://localhost:3000/auth/login', {login, password});
   }
 
 }
